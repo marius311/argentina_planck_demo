@@ -14,9 +14,19 @@ docker pull marius311/jcdemo_argentina
 To run it:
 
 ```bash
-docker run -d -v $(pwd):/root/shared -p 8888:8888 jcdemo_argentina
+docker run -d -v $(pwd):/root/shared -p 8888:8888 marius311/jcdemo_argentina
 ```
 
 At this point Juptyer is running and you simply need to point your browser to it. On Linux just go the URL `127.0.0.1:8888`. If you are running on Windows/Mac, replace `127.0.0.1` with the IP address reported when you start up the Docker Quickstart terminal.
 
 The folder from where you do the `run` command is shared between Docker and your local computer, so changes you make to notebooks will be saved there. 
+
+### Development
+
+The build the image from the source code provided here and make changes, just check out this git repository, edit the Dockerfile or add/modify any notebook files, and from the top folder run,
+
+```bash
+docker build -t marius311/jcdemo_argentina .
+```
+
+You will also need to download and place the PICO datafile in the top folder for the build to work, I'll make this file available from a central location as soon as I have a more final version. -Marius
